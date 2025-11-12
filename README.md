@@ -16,6 +16,26 @@ Raymap is an iOS SwiftUI prototype that previews the experience for a county par
 2. Select the `Raymap` scheme and an iOS 17+ simulator (or device).
 3. Build & run. Use any email plus the demo PIN `2580` to sign in.
 
+## Working with GitHub in Xcode
+
+If you would rather manage the repository from within Xcode instead of the command line:
+
+1. From Xcode's welcome window choose **Clone an Existing Project**, paste the GitHub URL for Raymap, and pick a destination folder. Xcode will check out the repo and open `Raymap.xcodeproj` automatically.
+2. To work with an already cloned checkout, open the project via **File → Open...**. Xcode detects the Git repository and enables the **Source Control** menu for commits, pulls, and pushes.
+3. Remote details can be updated later through **Source Control → Raymap → Configure Raymap…**, where you can verify the GitHub account, remotes, and default branch.
+
+These built-in tools make it easy to keep your local copy in sync with GitHub without leaving Xcode, while still allowing you to fall back to command-line Git when needed.
+
+## Troubleshooting project metadata updates
+
+If Xcode reports that the project is "damaged" after pulling fresh metadata:
+
+1. Quit any open Xcode instances so they release cached project state.
+2. Run **File → Open...** in Xcode and choose the repo's `Raymap.xcodeproj` again so it reloads the regenerated metadata.
+3. Choose **Product → Clean Build Folder...** (⇧⌘K) once before building to discard derived data created from the previous project definition.
+
+After re-opening, the shared **Raymap** scheme should appear automatically and the project should build normally.
+
 ## Next steps
 
 - Replace the mock `AuthService` with a real identity provider.
