@@ -16,6 +16,38 @@ Raymap is an iOS SwiftUI prototype that previews the experience for a county par
 2. Select the `Raymap` scheme and an iOS 17+ simulator (or device).
 3. Build & run. Use any email plus the demo PIN `2580` to sign in.
 
+## Web preview
+
+A companion web experience lives under `web/` and mirrors the Shelby County parcel explorer. The client and API are designed to deploy together on Netlify using serverless functions for authentication and parcel data access.
+
+1. `cd web`
+2. Copy the sample environment: `cp .env.example .env`
+3. Install dependencies: `npm install`
+4. Install the Netlify CLI if you want to develop locally: `npm install -g netlify-cli`
+5. Run the unified dev server (Vite + Netlify functions proxy): `npm run netlify:dev`
+
+The frontend talks to the bundled serverless functions at `/.netlify/functions`. Update `VITE_API_BASE_URL` if you expose the functions elsewhere.
+
+### Deploying to Netlify
+
+Connect your GitHub repository in the Netlify dashboard and use the following build settings:
+
+- **Base directory:** `web`
+- **Build command:** `npm install && npm run build`
+- **Publish directory:** `dist`
+- **Functions directory:** `netlify/functions`
+
+Populate the environment variables (`AUTH_USERNAME`, `AUTH_PASSWORD`, and `SESSION_SECRET`) in the Netlify UI so the login function can validate credentials and issue signed cookies.
+
+### Credentials
+
+Use the demo username/password pair defined in `.env` (defaults to `planner` / `raymap`).
+
+### Testing
+
+Run `npm test` from `web/` to execute Vitest suites that cover the authentication flow and property information endpoints.
+
+
 ## Working with GitHub in Xcode
 
 If you would rather manage the repository from within Xcode instead of the command line:
