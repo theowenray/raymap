@@ -34,22 +34,18 @@ struct MapDashboardView: View {
     @ViewBuilder
     private var content: some View {
         ZStack(alignment: .bottom) {
-            Map(position: $camera, interactionModes: .all, selection: $parcelStore.selectedParcel) {
+            Map(position: $camera, interactionModes: .all) {
                 ForEach(filteredParcels) { parcel in
                     MapPolygon(parcel.polygon)
                         .stroke(.blue.opacity(0.35), lineWidth: 1)
-                        .foregroundStyle(
-                            parcelStore.selectedParcel?.id == parcel.id
-                                ? Color.cyan.opacity(0.35)
-                                : Color.blue.opacity(0.18)
-                        )
+                        .foregroundStyle(polygonFill(for: parcel))
 
                     MapAnnotation(coordinate: parcel.centroid) {
                         Button {
                             parcelStore.select(parcel)
                         } label: {
                             Circle()
-                                .fill(parcelStore.selectedParcel?.id == parcel.id ? Color.cyan : Color.indigo)
+                                .fill(markerFill(for: parcel))
                                 .frame(width: 10, height: 10)
                         }
                         .buttonStyle(.plain)
@@ -86,6 +82,14 @@ struct MapDashboardView: View {
             ParcelDetailSheet(parcel: parcel)
                 .presentationDetents([.fraction(0.35), .medium])
         }
+    }
+
+    private func polygonFill(for parcel: Parcel) -> Color {
+        parcelStore.isSelected(parcel) ? Color.cyan.opacity(0.35) : Color.blue.opacity(0.18)
+    }
+
+    private func markerFill(for parcel: Parcel) -> Color {
+        parcelStore.isSelected(parcel) ? Color.cyan : Color.indigo
     }
 }
 

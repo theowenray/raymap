@@ -27,6 +27,10 @@ final class ParcelStore: ObservableObject {
     func select(_ parcel: Parcel?) {
         selectedParcel = parcel
     }
+
+    func isSelected(_ parcel: Parcel) -> Bool {
+        selectedParcel?.id == parcel.id
+    }
 }
 
 struct ParcelLoader {
