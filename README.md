@@ -16,6 +16,27 @@ Raymap is an iOS SwiftUI prototype that previews the experience for a county par
 2. Select the `Raymap` scheme and an iOS 17+ simulator (or device).
 3. Build & run. Use any email plus the demo PIN `2580` to sign in.
 
+## Web preview
+
+A companion web experience lives under `web/` and mirrors the Shelby County parcel explorer:
+
+1. `cd web`
+2. Copy the sample environment: `cp .env.example .env`
+3. Install dependencies: `npm install`
+4. Start the API server: `npm run server` (listens on the `PORT` defined in `.env`)
+5. In a new terminal, launch the Vite dev server: `npm run dev`
+
+The frontend expects the API at `VITE_API_BASE_URL` (default `http://localhost:4000`) and proxies `/api` requests in development.
+
+### Credentials
+
+Use the demo username/password pair defined in `.env` (defaults to `planner` / `raymap`).
+
+### Testing
+
+Run `npm test` from `web/` to execute Vitest suites that cover the authentication flow and property information endpoints.
+
+
 ## Working with GitHub in Xcode
 
 If you would rather manage the repository from within Xcode instead of the command line:
