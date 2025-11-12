@@ -1,0 +1,12 @@
+.DS_Store
+/DerivedData
+xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.swp
+*.xcbkptlist
+*.xcscmblueprint
+*.orig
+/.build
+/Packages
+/*.xcodeproj/project.xcworkspace/xcuserdata

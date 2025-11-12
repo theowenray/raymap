@@ -1,0 +1,114 @@
+{
+  "type": "FeatureCollection",
+  "name": "shelby_parcels_sample",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "parcelId": "1704400200001",
+        "owner": "Ray Family Trust",
+        "address": "301 W South 1st St, Shelbyville, IL",
+        "acreage": 1.12
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -88.807102,
+              39.40586
+            ],
+            [
+              -88.805676,
+              39.40579
+            ],
+            [
+              -88.805612,
+              39.40469
+            ],
+            [
+              -88.807017,
+              39.40474
+            ],
+            [
+              -88.807102,
+              39.40586
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcelId": "1705001010004",
+        "owner": "Shelby Farms LLC",
+        "address": "County Rd 1925 E, Rural Shelby County",
+        "acreage": 24.93
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -88.73162,
+              39.34495
+            ],
+            [
+              -88.72842,
+              39.3449
+            ],
+            [
+              -88.72841,
+              39.34225
+            ],
+            [
+              -88.73161,
+              39.3423
+            ],
+            [
+              -88.73162,
+              39.34495
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcelId": "1705302050012",
+        "owner": "Prairie View Coop",
+        "address": "IL-16 & County Hwy 11, Windsor, IL",
+        "acreage": 8.45
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -88.60481,
+              39.44091
+            ],
+            [
+              -88.60345,
+              39.44082
+            ],
+            [
+              -88.60344,
+              39.43936
+            ],
+            [
+              -88.60478,
+              39.43944
+            ],
+            [
+              -88.60481,
+              39.44091
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
